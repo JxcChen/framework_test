@@ -1,0 +1,17 @@
+methods:
+  addDepartment:
+    steps:
+      - link_text: "通讯录"
+        click: {}
+      - link_text: "添加"
+        click: {}
+      - link_text: "添加部门"
+        click: {}
+      - name: "name"
+        send_key: "测试部"
+      - link_text: "选择所属部门"
+        click: {}
+      - xpath: "//div[@id='__dialog__MNDialog__']//a[text()='研发部']"
+        click: {}
+      - link_text: "确定"
+        click: {}
