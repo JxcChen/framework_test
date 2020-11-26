@@ -1,0 +1,20 @@
+
+
+steps:
+  - chrome: {}
+  - implicitly_wait: 10
+  - get: "https://work.weixin.qq.com/wework_admin/frame"
+  - find: {link_text: "通讯录"}
+  - click: {}
+  - find: {link_text: "添加"}
+  - click: {}
+  - find: {link_text: "添加部门"}
+  - click: {}
+  - find: {name: "name"}
+  - send_key: {}
+  - find: {link_text: "选择所属部门"}
+  - click: {}
+  - find: {xpath: "//div[@id='__dialog__MNDialog__']//a[text()='研发部']"}
+  - click: {}
+  - find: {link_text: "确定"}
+  - click: {}
