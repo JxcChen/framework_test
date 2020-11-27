@@ -15,3 +15,9 @@ methods:
         click: {}
       - link_text: "确定"
         click: {}
+  searchDepartment:
+    steps:
+      - link_text: "通讯录"
+        click: { }
+      - id: "memberSearchInput"
+        send_key: "测试部"

@@ -51,11 +51,16 @@ public class FrameworkTest2 {
 
 
     @Test
-    void addDepartment() throws IOException {
+    void addDepartment() {
         PageObjectModel model = new PageObjectModel();
-        model.executeTest("addDepartment",driver);
+        model.executeTest(driver);
     }
 
 
+    @Test
+    void searchDepartment(){
+        PageObjectModel model = new PageObjectModel();
+        model.executeTest(driver);
+    }
 
 }

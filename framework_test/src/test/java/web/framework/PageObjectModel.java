@@ -26,13 +26,17 @@ public class PageObjectModel {
      * @param driver
      * @throws IOException
      */
-    public void executeTest(String methodName, WebDriver driver) throws IOException {
+    public void executeTest( WebDriver driver) {
         System.out.println(Thread.currentThread().getStackTrace()[2].getMethodName());
         this.driver = driver;
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        PageObjectModel model = mapper.readValue(PageObjectModel.class.getResourceAsStream("/framework/project_data.yaml"),
-                PageObjectModel.class);
-        executeTestSteps(model.methods.get(Thread.currentThread().getStackTrace()[2].getMethodName()));
+        try {
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            PageObjectModel model = mapper.readValue(PageObjectModel.class.getResourceAsStream("/framework/project_data.yaml"),
+                    PageObjectModel.class);
+            executeTestSteps(model.methods.get(Thread.currentThread().getStackTrace()[2].getMethodName()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
